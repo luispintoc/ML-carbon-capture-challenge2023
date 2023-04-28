@@ -192,7 +192,7 @@ def create_lag_features(df, features, n_lags=3):
     Create lag features, percentage change, and difference features for the given dataframe and feature columns.
     """
 
-    lagged_df = df.copy()
+    lagged_df = pd.DataFrame()
 
     for feature in features:
         for lag in range(1, n_lags + 1):
