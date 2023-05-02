@@ -1,5 +1,7 @@
 data/test_df_expanded_feats.csv
 data/train_df_expanded_KNN_imp_feats.csv
+main copy 2.ipynb
+main copy.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
