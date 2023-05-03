@@ -29,7 +29,7 @@ The notebook *main.ipynb* is a standalone notebook since we've saved models and 
 * **temp_output/** Folder to store new output if models are retrained (to not overwrite previous work)
 
 ## Python notebooks/scripts
-* **main.ipynb** Notebook with step-by-step workflow of our winning solution. It has been diveded in 7 sections:
+* **main.ipynb** Notebook with step-by-step workflow of our best solution. It has been diveded in 7 sections:
   * Section 1: Train dataset pre-processing
   * Section 2: Feature engineering
   * Section 3: Classifier
