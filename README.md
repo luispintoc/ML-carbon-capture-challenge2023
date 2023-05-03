@@ -15,36 +15,28 @@ To tackle the problem of predicting carbon capture well injection rate deltas, w
 By addressing these two regimes separately, we can tailor our models to better understand and predict each of their unique characteristics.
 
 # Repository Structure
-Please run the notebooks in order. Additionally, the last notebook '6 validation_and_submission.ipynb' is a standalone notebook since we've saved models and outputs needed to reproduce it.
+The notebook *main.ipynb* is a standalone notebook since we've saved models and outputs needed to reproduce it.
 
 ## Folders
 * **data/** This folder contains the input files and the files generated after the data cleaning and feature engineering process.
-* **lazy_predictors/** A set of notebooks that implement various lazy predictors for the initial exploration of models.
-* **metadata/** This directory stores files containing important information, such as the list of top features and missing values.
-* **old_notebooks/** A collection of outdated or deprecated notebooks from earlier stages of the project.
-* **output/** This folder houses output files, including saved models and prediction results.
+* **final_output/** This folder houses output files, including saved models and prediction results.
   * **classifier/**
-    * If '1' in the name, means that was trained on the first 60% of the data
-    * If '2' in the name, means that was trained on the first 80% of the data
-    * If '3' in the name, means that was trained on all 100% training dataset
   * **regressor_class1/**
-    * If 'validation' in the name, means that it was trained with 85% of the data
-    * If 'final' in the name, means that it was trained with 100% of the data
   * **regressor_class0/**
-    * If 'validation' in the name, means that it was trained with 85% of the data
-    * If 'final' in the name, means that it was trained with 100% of the data
-
+* **old_notebooks/** A collection of outdated or deprecated notebooks from earlier stages of the project.
 * **papers/** A compilation of articles and papers related to the competition, providing valuable background information and insights.
 * **sandbox/** Notebooks dedicated to experimenting with and exploring the data during the development process.
+* **temp_output/** Folder to store new output if models are retrained (to not overwrite previous work)
 
 ## Python notebooks/scripts
-* **1 preprocessing.ipynb** A notebook focused on cleaning and feature engineering the training dataset, preparing it for model development.
-* **1 preprocessing_test_set.ipynb** A notebook dedicated to cleaning and feature engineering the test dataset, ensuring it is ready for model evaluation.
-* **2 xgb_classifier_feat_sel.ipynb** This notebook addresses *anomaly classification (or spikes detection)* by processing all generated features (around 3k) and selecting the top K features. It uses the first 60% of the dataset for training and the following 20% for validation (time-wise split), employing the XGBoost model.
-* **3 xgb_classifier_hyperparam_opt.ipynb** A notebook that fine-tunes the classifier's hyperparameters, now using only the top K features. The model is trained on 80% of the data with 20% for validation (time-wise split).
-* **4 xgb_anomalies_regressor.ipynb** This notebook focuses on *anomaly (classifier's positive class)* regression by processing all features and selecting the top K for regression. After feature selection, hyperparameter tuning is performed using the top K features.
-* **5 xgb_low-values_regressor.ipynb** A notebook dedicated to *low-values (classifier's negative class)* regression, which processes all features and selects the top K for regression. After feature selection, hyperparameter tuning is performed using the top K features.
-* **6 validation_and_submission.ipynb** A notebook that combines the outputs of the classifier and regressors, and prepares plots and the final submission file according to the competition's requirements.
+* **main.ipynb** Notebook with step-by-step workflow of our winning solution. It has been diveded in 7 sections:
+  * Section 1: Train dataset pre-processing
+  * Section 2: Feature engineering
+  * Section 3: Classifier
+  * Section 4: Spikes regressor
+  * Section 5: Low-values regressor
+  * Section 6: Combining regressor's outputs in final validation set
+  * Section 7: Testing
 * **utils.py** A Python file containing functions for data cleaning and feature engineering, which are used across different notebooks to maintain consistency and streamline the development process.
 
 # License
