@@ -1,6 +1,8 @@
 # Carbon Capture Injection Rate Delta Prediction
 # Team name: Air Liquide
 
+Competition link: https://xeek.ai/challenges/using-ai-to-validate-carbon-containment-in-the-illinois-basin
+
 This repository contains the code and results for a machine learning competition aimed at predicting carbon capture well injection rate deltas. This challenge is based on time series injection information and monitoring data from a carbon capture well. By correlating the change in injection rate to the behavior of other parameters in the well, this project can provide a checkpoint against carbon migration from the well or other losses during the process. The developed code can be used to validate carbon containment throughout the injection of the well.
 
 # Competition Description
